@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User model
-class Room extends Model {}
+class RoomFurniture extends Model {}
 
-Room.init(
+RoomFurniture.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,15 +12,20 @@ Room.init(
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    user_id: {
+    room_id: {
       type: DataTypes.STRING,
       allowNull: false,
       reference: {
-        model: 'user',
+        model: 'room',
+        key: 'id',
+        unique: false,
+      }
+    },
+    furniture_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      reference: {
+        model: 'furniture',
         key: 'id',
         unique: false,
       }
@@ -31,8 +36,8 @@ Room.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'room'
+    modelName: 'room_furniture'
   }
 );
 
-module.exports = Room;
+module.exports = RoomFurniture;

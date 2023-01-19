@@ -34,6 +34,5 @@ Furniture.init(
   }
 );
 
-module.exports = {
-  Furniture
-};
+module.exports = Furniture;
+
