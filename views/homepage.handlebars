@@ -1,10 +1,10 @@
-<h1>Homepage</h1>
+<h1 class="text-center p-3">How To Get Started</h1>
 
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-6 text-center">How to sign up</div>
         <div class="col-6 text-center">gif</div>
-        
+
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-6 text-center">How to create a room</div>
@@ -15,18 +15,38 @@
         <div class="col-6 text-center">hello</div>
     </div>
     <div class="row d-flex justify-content-center">
-        <button class="col-6">Get Started</button>
+        <button class="col-6"><a href="/signup">Get Started</a></button>
 
     </div>
 </div>
 
-<h2>Dashboard</h2>
-<div class="d-flex justify-content-end p-3">
-    <button>Add a Room</button>
+<h2 class="p-3">Dashboard</h2>
+<div class="p-3 container">
+    <div class="row d-flex justify-content-end m-3">
+        <button id="addRoomBtn" class="col-6">Add a Room</button>
+    </div>
+    <div class="row d-flex justify-content-end m-3">
+        <div class="col-6">
+            <form class="input-group" id="addRoomForm">
+                <input type="text" class="user-input form-control" id="roomNameInput" placeholder="Name Your Room">
+                <button class="search-btn btn btn-outline-secondary" type="submit" id="submitRoom">Add</button>
+            </form>
+        </div>
+    </div>
 </div>
 <div class="container" id="room-container">
     <div class="row">
         <div class="col-6">furnitures
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" id="updateRoom" href="#">Update Room</a>
+                    <a class="dropdown-item" id="deleteRoom" href="#">Delete Room</a>
+                </div>
+            </div>
             <ul>
                 <li>Chair</li>
             </ul>

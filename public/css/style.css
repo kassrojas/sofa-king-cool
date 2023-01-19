@@ -1,6 +1,10 @@
 footer h4 {
-position:absolute;
-bottom: 5px;
-min-width: 100%;
-text-align: center;
+    position:absolute;
+    bottom: 5px;
+    min-width: 100%;
+    text-align: center;
+}
+
+#addRoomForm {
+    display: none;
 }
