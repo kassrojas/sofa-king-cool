@@ -4,10 +4,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2</title>
+  <title>Sofa King Cool</title>
 </head>
 
 <body>
+  <header>
+    Sofa King Cool
+  </header>
+  <nav>
+     <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
   <main>
     {{{body}}}
   </main>
