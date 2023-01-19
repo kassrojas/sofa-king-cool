@@ -1,21 +1,30 @@
 const User = require('./User');
 const Furniture = require('./Furniture');
 const Room = require('./Room');
+const RoomFurniture = require('./RoomFurniture');
 
 User.hasMany(Room);
 Room.hasMany(Furniture);
 
-Furniture.belongsToMany(User, {
+Furniture.belongsToMany(Room, {
     through: {
-       model: Room,
+       model: RoomFurniture,
        unique: false,
     },
 });
 
-Furniture.belongsTo(Room);
+Room.belongsToMany(Furniture, {
+    through: {
+       model: RoomFurniture,
+       unique: false,
+    },
+});
+
+Room.belongsTo(User);
 
 module.exports = {
   User,
   Furniture,
-  Room
+  Room,
+  RoomFurniture
 };
