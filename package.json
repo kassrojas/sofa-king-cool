@@ -6,7 +6,7 @@
     "setup": "npm i && npm run copy:env && npm run sync && npm run seed",
     "start": "node server",
     "sync": "node db/sync",
-    "seed": "node seeds/seed",
+    "seed": "node seeds/index",
     "copy:env": "cp .env.EXAMPLE .env",
     "watch": "nodemon server"
   },

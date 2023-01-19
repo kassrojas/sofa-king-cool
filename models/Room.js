@@ -17,8 +17,8 @@ Room.init(
       allowNull: false
     },
     user_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: true,
       reference: {
         model: 'user',
         key: 'id',
