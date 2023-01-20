@@ -22,46 +22,17 @@
 </div>
 
 <h2 class="p-3 text-center">Dashboard</h2>
-<div class="p-3 container">
-    <div class="row d-flex justify-content-end m-3">
-        <button id="addRoomBtn" class="col-6 btn btn-outline-info">Add a Room</button>
-    </div>
-    <div class="row d-flex justify-content-end m-3">
-        <div class="col-6">
-            <form class="input-group" id="addRoomForm">
-                <input type="text" class="user-input form-control" id="roomNameInput" placeholder="Name Your Room">
-                <button class="search-btn btn btn-outline-info" type="submit" id="submitRoom">Add</button>
-            </form>
-        </div>
+<div class="p-3 row justify-content-end">
+    <div class="col-6 d-flex justify-content-end m-3">
+        <button id="addRoomBtn" class="btn btn-outline-info">Add a Room</button>
+        <form class="input-group" id="addRoomForm">
+            <input type="text" class="col-6 user-input form-control" id="roomNameInput" placeholder="Name Your Room">
+            <button class="search-btn btn btn-outline-info" type="submit" id="submitRoom">Add</button>
+        </form>
     </div>
 </div>
 <div class="container" id="room-container">
-    <div class="row">
-        <div class="col-6">furnitures
-            <div class="dropdown">
-                <button class="btn btn-outline-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Edit Room
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Update Room</a></li>
-                    <li><a class="dropdown-item" href="#">Delete Room</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-            <ul>
-                <li>Chair</li>
-            </ul>
-
-        </div>
-        <div class="col-6">
-            <nav class="navbar navbar-dark bg-dark">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
-        </div>
-    </div>
-
+{{#each rooms as |room|}}
+{{>room-details}}
+{{/each}}
 </div>
