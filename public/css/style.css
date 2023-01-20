@@ -1,10 +1,15 @@
 footer h4 {
-    position:absolute;
+    margin-top: 5px;
+    position: relative;
     bottom: 5px;
     min-width: 100%;
     text-align: center;
 }
 
 #addRoomForm {
+    display: none;
+}
+
+#renameRoomForm {
     display: none;
 }

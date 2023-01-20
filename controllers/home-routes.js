@@ -1,12 +1,19 @@
 const router = require('express').Router();
-const {} = require('../models/');
+const { Room } = require('../models/');
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
+  const roomData = await Room.findAll();
+  const rooms = roomData.map((room) =>
+    room.get({ plain: true })
+  );  
+  
   try {
     res.render('homepage', {
       loggedIn: req.session.loggedIn,
+      rooms
     });
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -28,6 +35,16 @@ router.get('/signup', (req, res) => {
   }
 
   res.render('signup');
+});
+
+// get all rooms for user
+router.get('/', async (req, res) => {
+  try {
+    
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
