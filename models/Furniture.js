@@ -21,7 +21,7 @@ Furniture.init(
       allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.FLOAT,
       allowNull: true,
     },
     notes: {

@@ -10,16 +10,16 @@
   <title>Sofa King Cool</title>
 </head>
 
-<body>
+<body class="bg-dark text-info">
   <header>
     <h1 class="text-center">Sofa King Cool</h1>
   </header>
-  <nav class="p-3">
-     <a href="/" class="p-2">Home</a>
+  <nav class="p-3">  
+       <a href="/" class="btn btn-outline-info">Home</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style p-2">Logout</button>
+    <a id="logout" class="btn btn-outline-info">Logout</a>
     {{else}}
-    <a href="/login">Login</a>
+    <a href="/login" class="btn btn-outline-info">Login</a>
     {{/if}}
   </nav>
   <main>
