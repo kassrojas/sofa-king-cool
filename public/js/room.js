@@ -1,5 +1,5 @@
 const showHide = function (element) {
-    console.log(element.nextElementSibling);
+    // console.log(element.nextElementSibling);
     if (element.nextElementSibling.style.display = "none") {
         element.nextElementSibling.style.display = "flex";
         element.style.display = "none";
@@ -24,13 +24,12 @@ const submitRoom = async (event) => {
 
 const updateRoom = async (event) => {
     event.preventDefault();
-
+    
     const roomName = document.querySelector('#roomRenameInput').value.trim();
     const roomId = event.target.getAttribute('data-index-number');
-    console.log(roomId);
 
     if (roomName) {
-        const response = await fetch('/api/rooms', {
+        const response = await fetch(`/api/rooms/${roomId}`, {
             method: 'PUT',
             body: JSON.stringify({ 
                 name: roomName,
@@ -38,25 +37,60 @@ const updateRoom = async (event) => {
             }),
             headers: { 'Content-Type': 'application/json' },
         }
-    )};
-    if (response.ok) {
+        )};
         document.location.replace('/');
-      } else {
-        alert('Failed to add dish');
-      }
 };
 
+const deleteRoom = async (event) => {
+    event.preventDefault();
+    
+    const roomId = event.target.getAttribute('data-index-number');
+    console.log(roomId);
 
-document.querySelector('#room-container').addEventListener('click', (event) => {
-    if (event.target.matches('.renameRoomBtn')) {
-        showHide(event.target);
-    }
-});
+    if (roomId) {
+        const response = await fetch(`/api/rooms/${roomId}`, {
+            method: 'DELETE',
+            body: JSON.stringify({ 
+                id: roomId
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        }
+        )};
+        document.location.replace('/');
+};
+
+const handleSearch = async (event) => {
+    event.preventDefault();
+    
+    const q = document.querySelector('.form-select').value;
+    console.log(q);
+    const furnitureId = event.target.getAttribute('data-index-number');
+    
+    // if (q) {
+    //     const response = db.Query
+    // }
+
+ }
 
 document.getElementById('addRoomBtn').addEventListener('click', (event) => {
     showHide(event.target);
 });
 
+document.querySelector('.search-btn').addEventListener('click', (event) => {
+    handleSearch(event);
+});
+
 document.getElementById('submitRoom').addEventListener('click', submitRoom);
 
-document.getElementById('submitRename').addEventListener('click', updateRoom);
+document.querySelector('#room-container').addEventListener('click', (event) => {
+    if (event.target.matches('.rename-btn')) {
+        updateRoom(event);
+    }
+    else if (event.target.matches('.delete-btn')) {
+        deleteRoom(event);
+    }
+    else if (event.target.matches('.renameRoomBtn')) {
+        showHide(event.target);
+    }
+});
+
