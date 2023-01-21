@@ -19,7 +19,8 @@ const submitRoom = async (event) => {
         }
     )};
 
-     document.location.replace('/');
+    const here = document.location;
+    document.location.replace(`${here}`);
 };
 
 const updateRoom = async (event) => {
@@ -65,8 +66,9 @@ const handleSearch = async (event) => {
     const q = document.querySelector('.form-select').value;
     
     if (q) {
-        const response = await fetch(`api/furniture/${q}`)
+        const response = await fetch(`/api/furniture/${q}`)
     }
+    document.location.replace(`/api/furniture/${q}`);
  }
 
 document.getElementById('addRoomBtn').addEventListener('click', (event) => {
