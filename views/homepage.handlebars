@@ -43,6 +43,11 @@
         </form>
     </div>
 </div>
+<div class="row" id="furniture-container">
+    {{#each furnitures as |furniture|}}
+    {{>furniture-details}}
+    {{/each}}
+</div>
 <div class="container" id="room-container">
     {{#each rooms as |room|}}
     {{>room-details}}

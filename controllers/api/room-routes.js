@@ -5,7 +5,7 @@ const { User } = require ('../../models');
 
 router.get('/:id', async (req, res) => {
   try {
-  const roomData = await Room.findByPk(req.params.id);
+  const roomData = await Room.findByPk(req.params.id, {order: ['id', 'DESC']});
     res.json(roomData);
   } catch (err) {
     res.status(500).json(err);

@@ -63,13 +63,10 @@ const handleSearch = async (event) => {
     event.preventDefault();
     
     const q = document.querySelector('.form-select').value;
-    console.log(q);
-    const furnitureId = event.target.getAttribute('data-index-number');
     
-    // if (q) {
-    //     const response = db.Query
-    // }
-
+    if (q) {
+        const response = await fetch(`api/furniture/${q}`)
+    }
  }
 
 document.getElementById('addRoomBtn').addEventListener('click', (event) => {
