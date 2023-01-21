@@ -25,8 +25,11 @@ const submitRoom = async (event) => {
 
 const updateRoom = async (event) => {
     event.preventDefault();
+    console.log('hello')
     
-    const roomName = document.querySelector('#roomRenameInput').value.trim();
+    const roomName = event.target.previousElementSibling.value.trim();
+    console.log(roomName);
+
     const roomId = event.target.getAttribute('data-index-number');
 
     if (roomName) {
