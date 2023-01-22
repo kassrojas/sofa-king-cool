@@ -14,7 +14,12 @@ Room.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true
+    },
+    dashed_name: {
+      type: DataTypes.STRING,
+      unique: true
     },
     user_id: {
       type: DataTypes.INTEGER,

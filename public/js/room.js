@@ -10,11 +10,19 @@ const submitRoom = async (event) => {
     event.preventDefault();
 
     const roomName = document.querySelector('#roomNameInput').value.trim();
+    // const lowercaseName = roomName.toLowerCase();
+    // const dashedName = lowercaseName.replace(' ', '-');
+
+    // console.log(dashedName);
+
 
     if (roomName) {
         const response = await fetch('/api/rooms', {
             method: 'POST',
-            body: JSON.stringify({ name: roomName }),
+            body: JSON.stringify({ 
+                name: roomName,
+                // dashed_name: dashedName
+            }),
             headers: { 'Content-Type': 'application/json' },
         }
     )};
@@ -28,7 +36,8 @@ const updateRoom = async (event) => {
     console.log('hello')
     
     const roomName = event.target.previousElementSibling.value.trim();
-    console.log(roomName);
+    const lowercaseName = roomName.toLowerCase();
+    const dashedName = lowercaseName.replace(' ', '-');
 
     const roomId = event.target.getAttribute('data-index-number');
 
@@ -37,6 +46,7 @@ const updateRoom = async (event) => {
             method: 'PUT',
             body: JSON.stringify({ 
                 name: roomName,
+                dashed_name: dashedName,
                 id: roomId
             }),
             headers: { 'Content-Type': 'application/json' },
