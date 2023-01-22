@@ -1,0 +1,22 @@
+<div class="p-3 row justify-content-between">
+    <div class="col-9">
+        <select class="form-select" size="3" aria-label="size 3 select example">
+            <option value="tables">Tables</option>
+            <option value="seating">Seating</option>
+            <option value="sleeping">Sleeping</option>
+            <option value="storage">Storage</option>
+            <option value="rugs">Rugs</option>
+            <option value="desks">Desks</option>
+        </select>
+        <button class="search-btn btn btn-outline-info my-2 my-sm-0"
+            type="submit">Search</button>
+    </div>
+</div>
+<h2 class="h2">{{furnitures.[0].type}}</h2>
+<div class="container" id="furniture-container">
+    {{#each furnitures as |furniture|}}
+    {{>furniture-details}}
+    {{/each}}
+</div>
+
+<script src="/js/results.js"></script>

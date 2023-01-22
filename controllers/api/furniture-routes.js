@@ -10,8 +10,10 @@ router.get('/:type', async (req, res) => {
   );
   console.log(furnitures);
 
-    res.render('homepage', {
+    res.render('results', {
       furnitures,
+      type: furnitures.type
+
     });
   } catch (err) {
     res.status(500).json(err);

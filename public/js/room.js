@@ -1,5 +1,5 @@
 const showHide = function (element) {
-    // console.log(element.nextElementSibling);
+    console.log(element.nextElementSibling);
     if (element.nextElementSibling.style.display = "none") {
         element.nextElementSibling.style.display = "flex";
         element.style.display = "none";
@@ -64,6 +64,9 @@ const deleteRoom = async (event) => {
 };
 
 const handleSearch = async (event) => {
+    const roomId = document.querySelector('.delete-btn').getAttribute('data-index-number');
+    console.log(roomId);
+  
     event.preventDefault();
     
     const q = document.querySelector('.form-select').value;
@@ -72,7 +75,8 @@ const handleSearch = async (event) => {
         const response = await fetch(`/api/furniture/${q}`)
     }
     document.location.replace(`/api/furniture/${q}`);
- }
+  }
+  
 
 document.getElementById('addRoomBtn').addEventListener('click', (event) => {
     showHide(event.target);
@@ -80,9 +84,12 @@ document.getElementById('addRoomBtn').addEventListener('click', (event) => {
 
 document.querySelector('.search-btn').addEventListener('click', (event) => {
     handleSearch(event);
-});
+  });
 
 document.getElementById('submitRoom').addEventListener('click', submitRoom);
+
+
+    
 
 document.querySelector('#room-container').addEventListener('click', (event) => {
     if (event.target.matches('.rename-btn')) {
