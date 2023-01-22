@@ -9,7 +9,8 @@ router.get('/:id', async (req, res) => {
     // res.json(roomData);
     console.log(roomData);
     res.render('room', {
-      room
+      room,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);

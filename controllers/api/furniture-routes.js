@@ -12,7 +12,8 @@ router.get('/:type', async (req, res) => {
 
     res.render('results', {
       furnitures,
-      type: furnitures.type
+      type: furnitures.type,
+      loggedIn: req.session.loggedIn
 
     });
   } catch (err) {
