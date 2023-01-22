@@ -14,7 +14,7 @@ RoomFurniture.init(
     },
     room_id: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       reference: {
         model: 'room',
         key: 'id',
@@ -23,7 +23,7 @@ RoomFurniture.init(
     },
     furniture_id: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       reference: {
         model: 'furniture',
         key: 'id',

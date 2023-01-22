@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
   
   try {
     res.render('homepage', {
+      
       loggedIn: req.session.loggedIn,
       rooms
     });

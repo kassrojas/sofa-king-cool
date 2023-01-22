@@ -8,10 +8,25 @@
             <option value="rugs">Rugs</option>
             <option value="desks">Desks</option>
         </select>
-        <button class="search-btn btn btn-outline-info my-2 my-sm-0"
-            type="submit">Search</button>
+        <button class="search-btn btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </div>
 </div>
+<select class="room-choice form-select" aria-label="Default select example">
+  <option>Open this select menu</option>
+        {{#each rooms as |room|}}
+            {{>room-list}}
+        {{/each}}
+</select>
+{{!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+    </button>
+    <ul class="dropdown-menu">
+        {{#each rooms as |room|}}
+        {{>room-list}}
+        {{/each}}
+    </ul>
+</div> --}}
 <h2 class="h2">{{furnitures.[0].type}}</h2>
 <div class="container" id="furniture-container">
     {{#each furnitures as |furniture|}}

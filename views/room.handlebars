@@ -1,7 +1,7 @@
 <div class="room-card card bg-light m-3 p-3">
     <div class="row m-1">
-        <h3 class="col-10">{{room.name}}</h3>
-        <button type="button" data-index-number="{{room.id}}" class="delete-btn col-2 btn btn-danger">&#128465</button>
+        <h3 class="col-10">{{rooms.name}}</h3>
+        <button type="button" data-index-number="{{rooms.id}}" class="delete-btn col-2 btn btn-danger">&#128465</button>
     </div>
     <div class="row">
         <div class="col-6">
@@ -9,12 +9,14 @@
                 <button class="renameRoomBtn col-6 btn btn-outline-info">Rename Room</button>
                 <form class="input-group" id="renameRoomForm">
                     <input type="text" class="user-input form-control" id="roomRenameInput" placeholder="Rename Room">
-                    <button class="rename-btn btn btn-outline-info" data-index-number="{{room.id}}" type="submit"
+                    <button class="rename-btn btn btn-outline-info" data-index-number="{{rooms.id}}" type="submit"
                         id="submitRename">Rename</button>
                 </form>
             </div>
             <ul>
-                <li>Chair</li>
+                {{#each rooms.furniture as |furniture|}}
+                {{>room-furniture-details}}
+                {{/each}}
             </ul>
 
         </div>
