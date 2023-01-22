@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
     try {
       const newRoom = await Room.create({
         name: req.body.name,
-        // dashed_name: req.body.dashed_name,
+        dashed_name: req.body.dashed_name,
         user_id: req.session.userId
       },
       {
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
   
       req.session.save(() => {
         req.session.name = newRoom.name;
-        // req.session.dashed_name = newRoom.dashed_name;
+        req.session.dashed_name = newRoom.dashed_name;
         res.json(newRoom);
       });
     } catch (err) {

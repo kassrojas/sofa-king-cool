@@ -10,8 +10,8 @@ const submitRoom = async (event) => {
     event.preventDefault();
 
     const roomName = document.querySelector('#roomNameInput').value.trim();
-    // const lowercaseName = roomName.toLowerCase();
-    // const dashedName = lowercaseName.replace(' ', '-');
+    const lowercaseName = roomName.toLowerCase();
+    const dashedName = lowercaseName.replace(' ', '-');
 
     // console.log(dashedName);
 
@@ -21,7 +21,7 @@ const submitRoom = async (event) => {
             method: 'POST',
             body: JSON.stringify({ 
                 name: roomName,
-                // dashed_name: dashedName
+                dashed_name: dashedName
             }),
             headers: { 'Content-Type': 'application/json' },
         }
