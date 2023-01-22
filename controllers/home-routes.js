@@ -37,16 +37,6 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// get all rooms for user
-router.get('/', async (req, res) => {
-  try {
-    
-
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 
 
 module.exports = router;
