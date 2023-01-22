@@ -3,7 +3,11 @@ const { Room, Furniture } = require('../models/');
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
-  const roomData = await Room.findAll();
+  const roomData = await Room.findAll({
+    include: {
+      model: Furniture
+    }
+  });
   const rooms = roomData.map((room) =>
     room.get({ plain: true })
   );  
