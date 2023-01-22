@@ -1,16 +1,22 @@
 const router = require('express').Router();
-const { Room, User } = require ('../../models');
+const { Room, User, Furniture } = require ('../../models');
 
 
 router.get('/:id', async (req, res) => {
   try {
-  const roomData = await Room.findByPk(req.params.id);
-  const room = roomData.get({ plain: true })
-    // res.json(roomData);
-    console.log(roomData);
+  const roomData = await Room.findByPk(req.params.id, {
+    include: {
+      model: Furniture
+    }
+  });
+
+
+  const rooms = roomData.get({ plain: true })
+    console.log(rooms);
     res.render('room', {
-      room,
+      rooms,
       loggedIn: req.session.loggedIn,
+      
     });
   } catch (err) {
     res.status(500).json(err);
