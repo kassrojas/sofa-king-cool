@@ -16,7 +16,9 @@
                 </form>
             </div>
             <ul>
-                <li>Chair</li>
+                {{#each furniture as |furniture|}}
+                {{>homepage-room-furniture}}
+                {{/each}}
             </ul>
 
         </div>
@@ -24,7 +26,7 @@
             <form class="form-inline">
                 {{!-- <input class="search-input form-control mr-sm-2" type="text" placeholder="Search to add Furniture"
                     aria-label="Search"> --}}
-                    
+
             </form>
         </div>
     </div>
