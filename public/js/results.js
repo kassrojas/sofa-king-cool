@@ -16,7 +16,11 @@ const handleSearch = async (event) => {
 const addFurniture = async (event) => {
   const furnitureId = event.target.getAttribute('data-index-number');
   const roomName = document.querySelector('.room-choice').value;
-  const roomId = document.querySelector(`.${roomName}`).getAttribute('data-index-number');
+  const lowercaseName = roomName.toLowerCase();
+  const dashedName = lowercaseName.replace(' ', '-');
+
+  console.log(roomName);
+  const roomId = document.querySelector(`.${dashedName}`).getAttribute('data-index-number');
   
   console.log(furnitureId);
   console.log(roomId);

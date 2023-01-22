@@ -24,9 +24,11 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  console.log(req.body);
     try {
       const newRoom = await Room.create({
         name: req.body.name,
+        // dashed_name: req.body.dashed_name,
         user_id: req.session.userId
       },
       {
@@ -38,6 +40,7 @@ router.post('/', async (req, res) => {
   
       req.session.save(() => {
         req.session.name = newRoom.name;
+        // req.session.dashed_name = newRoom.dashed_name;
         res.json(newRoom);
       });
     } catch (err) {
@@ -47,8 +50,12 @@ router.post('/', async (req, res) => {
 
   router.put('/:id', async (req, res) => {
     // update a category by its `id` value
+    
   try {
-    const roomData = await Room.update(req.body, {
+    const roomData = await Room.update({
+      name: req.body.name,
+      dashed_name: req.body.dashed_name
+    }, {
       where: {
         id: req.params.id,
       },
