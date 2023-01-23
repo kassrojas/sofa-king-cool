@@ -41,14 +41,15 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/post-furniture', async (req, res) => {
-  const furnitureData = await Furniture.findAll({  });
-  const furnitures = furnitureData.map((furniture) => furniture.get({ plain: true })
-);  
-  console.log(furnitures);
+router.get('/post-furniture/', async (req, res) => {
   res.render('post-furniture', {
-    loggedIn: req.session.loggedIn,
-    furnitures
+    loggedIn: req.session.loggedIn
+  });
+});
+
+router.get('/post-image', async (req, res) => {
+  res.render('post-image', {
+    loggedIn: req.session.loggedIn
   });
 });
 
