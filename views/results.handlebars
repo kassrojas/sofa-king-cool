@@ -1,5 +1,6 @@
 <div class="p-3 row justify-content-between">
-    <div class="col-9">
+    <div class="col-lg-6 m-2">
+        <h4> 1. Select Type of Furniture To Search:</h4>
         <select class="form-select" size="3" aria-label="size 3 select example">
             <option value="tables">Tables</option>
             <option value="seating">Seating</option>
@@ -8,25 +9,19 @@
             <option value="rugs">Rugs</option>
             <option value="desks">Desks</option>
         </select>
-        <button class="search-btn btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
     </div>
-</div>
-<select class="room-choice form-select" aria-label="Default select example">
-  <option>Open this select menu</option>
-        {{#each rooms as |room|}}
-            {{>room-list}}
-        {{/each}}
-</select>
-{{!-- <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-    </button>
-    <ul class="dropdown-menu">
+    <div class="col-lg-6 m-2">
+        <h4>2. Select Room To Add Furniture:</h4>
+    <select class="room-choice form-select">
+        <option>Open Menu For Rooms</option>
         {{#each rooms as |room|}}
         {{>room-list}}
         {{/each}}
-    </ul>
-</div> --}}
+    </select>
+    </div>
+</div>
+
 <h2 class="h2">{{furnitures.[0].type}}</h2>
 <div class="container" id="furniture-container">
     {{#each furnitures as |furniture|}}

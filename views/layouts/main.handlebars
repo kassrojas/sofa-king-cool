@@ -12,17 +12,19 @@
 
 <body>
   <header>
-    <h1 class="text-center">SOFA-KING COOL</h1>
+    <h1 class="text-center mt-1">SOFA-KING COOL</h1>
   </header>
-  <nav class="p-3" id="homeNavBar">
-    <a href="/" class="btn">Home</a>
-    {{#if loggedIn}}
-    <a id="logout" class="btn">Logout</a> {{!-- btn-outline-info --}}
-    <a href="/post-furniture" class="btn">Add Furniture</a>
-    {{else}}
-    <a href="/login" class="btn">Login</a> 
-    {{/if}}
-  </nav>
+  <header> 
+    <nav id="homeNavBar">
+      <a href="/" class="btn">Home</a>
+      {{#if loggedIn}}
+      <a href="/post-furniture" class="btn">| Add Custom Furniture |</a>
+      <a id="logout" class="btn">Logout</a> {{!-- btn-outline-info --}}
+      {{else}}
+      <a href="/login" class="btn">Login</a>
+      {{/if}}
+    </nav>
+  </header>
 
   <main>
     {{{body}}}

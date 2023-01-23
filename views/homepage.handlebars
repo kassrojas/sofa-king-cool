@@ -1,8 +1,9 @@
 {{#if loggedIn}}
 <h2 class="p-3 text-center">Home</h2>
 
-<div class="row justify-space-between m-3">
-    <div class="col-7">
+<div class="row justify-space-between m-3" id="furnitureResultsPage">
+    <div class="col">
+        <h4> Select Type of Furniture To Search:</h4>
         <select class="form-select" size="3" aria-label="size 3 select example">
             <option value="tables">Tables</option>
             <option value="seating">Seating</option>
@@ -11,14 +12,14 @@
             <option value="rugs">Rugs</option>
             <option value="desks">Desks</option>
         </select>
-        <button class="search-btn btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
     </div>
 
-    <div class="col-3 d-flex justify-content-end m-3">
-        <button id="addRoomBtn" class="btn btn-outline-info">Add a Room</button>
+    <div class="col d-flex justify-content-end m-3">
+        <button id="addRoomBtn" class="btn btn-outline-dark">Add a Room</button>
         <form class="input-group" id="addRoomForm">
             <input type="text" class="col-6 user-input form-control" id="roomNameInput" placeholder="Name Your Room">
-            <button class="search-btn btn btn-outline-info" type="submit" id="submitRoom">Add</button>
+            <button class="search-btn btn btn-outline-dark" type="submit" id="submitRoom">Add</button>
         </form>
     </div>
 
