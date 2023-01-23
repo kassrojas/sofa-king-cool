@@ -1,24 +1,24 @@
-     <img class="house" src="/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg" alt="A simple room" />
+<img class="house" src="/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg" alt="A simple room" />
 <div class="card m-2 p-2" id="window-login">
   <div class="card-header">
-
     <h2>Login</h2>
   </div>
-  <form id="login-form" class="card-body card-header">
-
-    <div class="m-2 p-2">
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
-    </div>
-    <div class="m-2 p-2">
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <button type="submit" id="login-btn" class="btn m-2 p-2">Login</button>{{!-- btn-outline-info --}}
-    <a href="/signup">  
-       <button type="button" class="btn m-2 p-2">Sign Up Instead</button> {{!-- btn-outline-info --}} 
-     </a>
-  </form>
+  <div role="tabpanel">
+    <form id="login-form" class="card-body card-header">
+      <div class="m-2 p-2">
+        <label for="username-input-login">Username</label>
+        <input type="text" id="username-input-login" />
+      </div>
+      <div class="m-2 p-2">
+        <label for="password-input-login" class="form-label">Password</label>
+        <input type="password" id="password-input-login" />
+      </div>
+      <button type="submit" id="login-btn" class="btn m-2 p-2 btn-outline-dark">Login</button>
+      <a href="/signup">
+        <button type="button" class="btn btn-outline-dark m-2 p-2">Sign Up Instead</button>
+      </a>
+    </form>
+  </div>
 </div>
 
 <script src="/js/login.js"></script>

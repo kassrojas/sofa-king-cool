@@ -1,132 +1,177 @@
-.fit {
-    max-height: 990x;
-    max-width: 100%;
-}
-#how-get-started {
-    padding-bottom: 5px;
-}
-/* ------------------ texts styles--------------- */
-p {
-    color: black;
-}
- h1 {
-    font-family: Antom ;
-    padding-top: 44px;
-    color: black;
- }
- h2 {
-     color: black;
-     text-align: center;
- }
- h3 {
-    min-width: 100%;
-    text-align: center;   
-    color: black;
-}
-h4 {
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(233, 237, 201);
   color: black;
-  /* position: absolute;
-  bottom: 0; */
- padding-top: 40px;
- padding-bottom: 40px;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: rgba(40, 54, 24, 0.5);
+  color: rgb(233, 237, 201);
+}
+
+#homeNavBar a {
+  font-size: 24px;
+}
+
+footer {
+  background-color: rgba(40, 54, 24, 0.5);
+  color: rgb(233, 237, 201);
+  padding: 5px;
+}
+
+#gettingStartedContainer p {
+  font-size: 18px;
+}
+
+#gettingStartedContainer h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#gettingStartedContainer h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 label {
   color: black;
 }
+
 .card-header {
   text-align: center;
 }
+
 #window-signup {
-text-align: center;
-}
-/* -------------------------------------- */
-footer {
-    margin-top: 5px;
-    position: relative;
-    bottom: 5px;
-    min-width: 100%;
-    text-align: center;
-    background-color: white;
-    height: 40px;
+  text-align: center;
 }
 
 #addRoomForm {
-    display: none;
+  display: none;
 }
 
 #renameRoomForm {
-    display: none;
+  display: none;
 }
-/* ______________________________homepage_______________________________ */
+
+/* homepage */
 .container {
-    position: relative;
-    text-align: center;
-    max-width: 100%;
-    margin: 0 auto;
-    
-  }
-  
-  .container img {vertical-align: middle;}
-  
-  .house {
-    position: relative;
-   max-width: 100%;
-   height: auto;
-  }
-  #window {
-    height: auto;
-    /* height: 900px; */
-      
-     position: fixed; /*fixed  absolute*/
-    top: 50%;
-    /* top: 65%; */
-      left: 50%;
-      transform: translate(-50%, -50%);
-    background: rgb(228, 217, 217); /* Fallback color */
-    background: rgb(245, 239, 239, 0.3); /* Black background with 0.5 opacity */
-    color: #f1f1f1;
-    width: 40%;
-    padding: 20px;
-  }
-  
-  /* ______________________________login and signup pages_______________________________ */
-  .hero-image {
-    background-image: url("/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg");
-    background-color: #cccccc;
-    max-height: 1000px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: cover;
-  } 
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+
+}
+
+.container img {
+  vertical-align: middle;
+}
+
+.house {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ______________________________login and signup pages_______________________________ */
+.hero-image {
+  background-image: url("/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg");
+  background-color: #cccccc;
+  max-height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: cover;
+}
+
+@media screen and (min-width: 1245px) {
   #window-login {
     height: auto;
-    /* height: 900px; */
-      
-     position: fixed; /*fixed  absolute*/
+    position: fixed;
     top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    background: rgb(228, 217, 217); /* Fallback color */
-    background: rgb(245, 239, 239, 0.3); /* Black background with 0.5 opacity */
-    color: #f1f1f1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(228, 217, 217);
+    background: rgb(245, 239, 239, 0.3);
     width: 20%;
     height: 30%;
     padding: 20px;
   }
+}
+
+@media screen and (max-width: 1245px) {
+  #window-login {
+    background: rgb(228, 217, 217);
+    background: rgb(245, 239, 239, 0.3);
+  }
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(233, 237, 201);
+    color: black;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1140px) {
   #window-signup {
     height: auto;
-    /* height: 900px; */
-      
-     position: fixed; /*fixed  absolute*/
+    position: absolute;
     top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    background: rgb(228, 217, 217); /* Fallback color */
-    background: rgb(245, 239, 239, 0.3); /* Black background with 0.5 opacity */
-    color: #f1f1f1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(228, 217, 217);
+    background: rgb(245, 239, 239, 0.3);
     width: 40%;
     padding: 20px;
   }
-  
+}
 
+@media screen and (max-width: 1140px) {
+  #window-signup {
+    background: rgb(228, 217, 217);
+    background: rgb(245, 239, 239, 0.3);
+  }
+  header {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #gettingStartedContainer {
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(228, 217, 217);
+    background: rgb(245, 239, 239, 0.3);
+    width: 40%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #gettingStartedContainer {
+    background: rgb(228, 217, 217);
+    background: rgb(245, 239, 239, 0.3);
+  }
+  #gettingStartedContainer h3 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  #gettingStartedContainer h4 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #homeNavBar a {
+    font-size: 20px;
+    padding: 2px;
+  }
+  header {
+    padding: 8px;
+  }
+}
