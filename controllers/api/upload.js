@@ -7,7 +7,7 @@ const { Furniture } = require ('../../models');
 router.post('/:id', upload, async (req, res) => {
   const { file } = req;
   // Captures the file data from the upload process and sends it to Cloudinary
-  const result = await uploadToCloudinary(file.path, { folder: 'samples' });
+  const result = await uploadToCloudinary(file.path, { folder: 'Images' });
   // When the upload is complete, delete it from the /tmp directory
   if (file) unlinkSync(file.path);
 

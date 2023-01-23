@@ -3,28 +3,34 @@
     {{!-- name --}}
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Name of your piece</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input type="email" class="form-control" id="name">
     </div>
     {{!-- type - dropdown --}}
     <div class="mb-3">
       <label for="disabledSelect" class="form-label">Type</label>
-      <select id="disabledSelect" class="form-select">
-        {{#each furnitures as |furniture|}}
-        {{>type-details}}
-        {{/each}}
+      <select id="type" class="form-select">
+        <option>Tables</option>
+        <option>Seating</option>
+        <option>Sleeping</option>
+        <option>Storage</option>
+        <option>Rugs</option>
+        <option>Desks</option>
       </select>
     </div>
     {{!-- price --}}
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Price</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input type="email" class="form-control" id="price">
     </div>
     {{!-- notes --}}
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="notes" rows="3"></textarea>
     </div>
     {{!-- submit button --}}
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
   </fieldset>
 </form>
+
+<script src="/js/post-furniture.js"></script>
+

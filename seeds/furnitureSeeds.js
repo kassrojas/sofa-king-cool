@@ -4,42 +4,50 @@ const furnitureData = [
     {
         name: "French Coffee Table",
         type: "Tables",
-        price: 499.99
+        price: 499.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Mahogany Coffee Table",
         type: "Tables",
-        price: 399.99
+        price: 399.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Walnut End Table",
         type: "Tables",
-        price: 199.99
+        price: 199.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Glass Bar Table",
         type: "Tables",
-        price: 149.99
+        price: 149.99, 
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Espresso Dining Room Table",
         type: "Tables",
-        price: 599.99
+        price: 599.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Poker Table",
         type: "Tables",
-        price: 299.99
+        price: 299.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Work Table",
         type: "Tables",
-        price: 199.99
+        price: 199.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Cherry Coffee Table",
         type: "Tables",
-        price: 249.99
+        price: 249.99,
+        image: "https://res.cloudinary.com/dzwbz6u9b/image/upload/v1674500347/samples/xxseo334xxpit43g1zrd.jpg"
       },
       {
         name: "Work Chair",
