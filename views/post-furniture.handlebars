@@ -1,0 +1,30 @@
+<form>
+  <fieldset class="m-3">
+    {{!-- name --}}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name of your piece</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    {{!-- type - dropdown --}}
+    <div class="mb-3">
+      <label for="disabledSelect" class="form-label">Type</label>
+      <select id="disabledSelect" class="form-select">
+        {{#each furnitures as |furniture|}}
+        {{>type-details}}
+        {{/each}}
+      </select>
+    </div>
+    {{!-- price --}}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    {{!-- notes --}}
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    {{!-- submit button --}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>

@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+const { existsSync, mkdirSync } = require('fs');
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -25,6 +28,10 @@ const sess = {
   })
 };
 
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.static('public'));
+
 app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
@@ -40,10 +47,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 
-
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}!`);
-  sequelize.sync({ force: false });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`listening at http://localhost:${PORT}`);
+    // Creates a temporary directory if it doesn't exist
+    const dir = path.join(__dirname, 'tmp/');
+    if (!existsSync(dir)) mkdirSync(dir, 0744);
+  });
 });
 
 // /css/style.css

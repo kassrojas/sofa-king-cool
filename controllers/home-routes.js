@@ -14,7 +14,6 @@ router.get('/', async (req, res) => {
   
   try {
     res.render('homepage', {
-      
       loggedIn: req.session.loggedIn,
       rooms
     });
@@ -42,6 +41,15 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-
+router.get('/post-furniture', async (req, res) => {
+  const furnitureData = await Furniture.findAll({  });
+  const furnitures = furnitureData.map((furniture) => furniture.get({ plain: true })
+);  
+  console.log(furnitures);
+  res.render('post-furniture', {
+    loggedIn: req.session.loggedIn,
+    furnitures
+  });
+});
 
 module.exports = router;

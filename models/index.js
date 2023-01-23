@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const User = require('./User');
 const Furniture = require('./Furniture');
 const Room = require('./Room');
