@@ -5,7 +5,6 @@ const handleSubmit = async (event) => {
   const type = document.querySelector('#type').value;
   const price = document.querySelector('#price').value.trim();
   const description = document.querySelector('#notes').value.trim();
-  console.log(name, type, price, description);
 
   if (name) {
     const response = await fetch('api/furniture', {

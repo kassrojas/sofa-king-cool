@@ -5,12 +5,10 @@ const cloudinary = require('../config/cloudinary');
 // Uses the /tmp directory to save files
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    console.log('DEST', file);
     cb(null, './tmp/');
   },
   // Creates a unique filename using the current timestamp in milliseconds
   filename(req, file, cb) {
-    console.log('FILE', file);
     cb(null, file.fieldname + '-' + Date.now().toString().toLowerCase());
   }
 });
