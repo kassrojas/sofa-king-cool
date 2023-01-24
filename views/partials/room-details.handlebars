@@ -1,33 +1,27 @@
-<div class="card bg-light m-3 p-3">
+<div class="card container bg-light m-3 p-3">
     <div class="row m-1">
         <a href="/api/rooms/{{id}}">
-            <h3 class="col-10">{{name}}</h3>
+            <h3 class="col card-header">{{name}}</h3>
         </a>
-        <button type="button" data-index-number="{{id}}" class="delete-btn col-2 btn btn-danger">&#128465</button>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <div class="row d-flex justify-content-start m-1">
-                <button class="renameRoomBtn col-6 btn btn-outline-info">Rename Room</button>
-                <form class="input-group" id="renameRoomForm">
-                    <input type="text" class="user-input form-control" id="roomRenameInput" placeholder="Rename Room">
-                    <button class="rename-btn btn btn-outline-info" data-index-number="{{id}}" type="submit"
-                        id="submitRename">Rename</button>
-                </form>
+    <div class="row d-flex justify-content-start m-1">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div>
+            <button class="renameRoomBtn col-6 btn btn-outline-dark">Rename Room &#9998;</button>
+            <form class="input-group" id="renameRoomForm">
+                <input type="text" class="user-input form-control" id="roomRenameInput" placeholder="Rename Room">
+                <button class="rename-btn btn btn-outline-dark" data-index-number="{{id}}" type="submit"
+                    id="submitRename">Rename</button>
+            </form>
             </div>
+            <button type="button" data-index-number="{{id}}" class="delete-btn col-6 btn btn-outline-danger">Delete Room &#128465;</button>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12">
             <ul>
                 {{#each furniture as |furniture|}}
                 {{>homepage-room-furniture}}
                 {{/each}}
             </ul>
-
-        </div>
-        <div class="col-6">
-            <form class="form-inline">
-                {{!-- <input class="search-input form-control mr-sm-2" type="text" placeholder="Search to add Furniture"
-                    aria-label="Search"> --}}
-
-            </form>
         </div>
     </div>
 </div>
