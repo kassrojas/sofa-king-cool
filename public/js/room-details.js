@@ -49,6 +49,24 @@ const deleteRoom = async (event) => {
       document.location.replace('/');
 };
 
+const deleteFurniture = async (event) => {
+  event.preventDefault();
+
+  const furnitureId = event.target.previousElementSibling.getAttribute('data-index-id')
+  
+  if (furnitureId) {
+    const response = await fetch(`/api/room-furniture/${furnitureId}`, {
+        method: 'DELETE',
+        body: JSON.stringify({ 
+            id: furnitureId
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    }
+    )};
+    document.location.reload();
+
+}
+
 // const handleSearch = async (event) => {
 //   const roomId = document.querySelector('.delete-btn').getAttribute('data-index-number');
 //   console.log(roomId);
@@ -68,6 +86,7 @@ const deleteRoom = async (event) => {
 //   handleSearch(event);
 // });
 
+
 document.querySelector('.room-card').addEventListener('click', (event) => {
   if (event.target.matches('.renameRoomBtn')) {
     showHide(event.target);
@@ -77,5 +96,8 @@ document.querySelector('.room-card').addEventListener('click', (event) => {
   }
   if (event.target.matches('.delete-btn')) {
     deleteRoom(event);
+  }
+  if (event.target.matches('.delete-furniture')) {
+    deleteFurniture(event);
   }
 })

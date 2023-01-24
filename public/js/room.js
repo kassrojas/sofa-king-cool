@@ -26,6 +26,9 @@ const submitRoom = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         }
         )
+        if (response.status === 500) {
+            document.querySelector('.modal').style.display = 'fixed';
+        }
     };
 
     const here = document.location;
@@ -91,6 +94,7 @@ const handleSearch = async (event) => {
 }
 
 
+
 document.getElementById('addRoomBtn').addEventListener('click', (event) => {
     showHide(event.target);
 });
@@ -101,14 +105,12 @@ document.querySelector('.search-btn').addEventListener('click', (event) => {
 
 document.getElementById('submitRoom').addEventListener('click', submitRoom);
 
-
-
-
 document.querySelector('#room-container').addEventListener('click', (event) => {
     if (event.target.matches('.rename-btn')) {
         updateRoom(event);
     }
     else if (event.target.matches('.delete-btn')) {
+        document.querySelector('.fail-button').click();
         deleteRoom(event);
     }
     else if (event.target.matches('.renameRoomBtn')) {
