@@ -10,9 +10,6 @@ router.get('/:type', async (req, res) => {
   const rooms = roomData.map((room) => room.get({ plain: true }));
   const furnitures = furnitureData.map((furniture) => furniture.get({ plain: true }));
 
-  console.log(furnitures);
-  console.log(rooms);
-
     res.render('results', {
       furnitures,
       rooms,

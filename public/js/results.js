@@ -1,9 +1,7 @@
-const handleSearch = async (event) => {
-  const roomId = document.querySelector('.add-btn').getAttribute('data-index-number');
-  console.log(roomId);
-
+const handleSearch = async (event) => { 
   event.preventDefault();
   
+  const roomId = document.querySelector('.add-btn').getAttribute('data-index-number');
   const q = document.querySelector('.form-select').value;
   document.querySelector('.furnType').innerHTML = q;
   

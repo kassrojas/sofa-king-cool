@@ -6,7 +6,6 @@ const { Furniture } = require ('../../models');
 // Uses middleware to process the file upload
 router.post('/:id', upload, async (req, res) => {
   const { file } = req;
-  console.log('FILE', file);
   // Captures the file data from the upload process and sends it to Cloudinary
   const result = await uploadToCloudinary(file.path, { folder: 'Images' });
   // When the upload is complete, delete it from the /tmp directory
@@ -17,7 +16,6 @@ router.post('/:id', upload, async (req, res) => {
     order: [['id', 'DESC']]
   });
   const id = furnitureData[0].id;
-  console.log(id);
 
   const item = await Furniture.findByPk(id);
 
