@@ -47,9 +47,11 @@ router.get('/post-furniture/', async (req, res) => {
   });
 });
 
-router.get('/post-image', async (req, res) => {
+router.get('/post-image/:id', async (req, res) => {
   res.render('post-image', {
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    id: req.params.id,
+    type: req.session.type
   });
 });
 
