@@ -46,15 +46,15 @@ To install necessary dependencies, run the following commands:
 
 "How To Get Started" briefs users on functionality of the webpage as well as allowing them to login or signup:
 
-![Screenshot](./public/images/applicationStart.png)
+![Screenshot](./public/images/app-login-page.png)
 
 "Search" page allows users to view all furniture matching the selected furniture type. From this page, users can add furniture to their selected room:
 
-![Screenshot](./public/images/applicationDash.png)
+![Screenshot](./public/images/app-homepage.png)
 
 "Add Custom Furniture" page allows users to add their own furniture and its details. Users have the option to add custom notes as well as images attached to the furniture items created. Following creation of a custom piece, a user can add their furntiure to any room:
 
-![Screenshot](./public/images/lapplicationCustom.png)
+![Screenshot](./public/images/app-furniture-page.png)
 
 ## License
 

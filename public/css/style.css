@@ -1,7 +1,8 @@
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Quicksand;
   background-color: rgb(233, 237, 201);
   color: black;
+  font-size: 25px;
 }
 
 header {
@@ -13,9 +14,20 @@ header {
   color: rgb(233, 237, 201);
 }
 
+main {
+  background-image: url('/images/bench-accounting-nvzvOPQW0gc-unsplash.jpg');
+  background-position: center;
+  background-repeat: none;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
 
 #homeNavBar a {
   font-size: 24px;
+}
+
+.room-image {
+  width: 100px;
 }
 
 footer {
@@ -56,6 +68,29 @@ label {
 
 #renameRoomForm {
   display: none;
+}
+
+.postFurnitureForm {
+  margin-left: 45px;
+  margin-right: 45px;
+  padding-top: 6vh;
+}
+
+.postImageForm {
+  margin-left: 45px;
+  margin-right: 45px;
+  padding-top: 30vh;
+}
+
+.postImageForm h3 {
+  margin: 15px;
+  text-align: center;
+
+}
+
+.postImageForm p {
+  text-align: center;
+  font-size: smaller;
 }
 
 
@@ -114,7 +149,6 @@ label {
   }
 
   body {
-    font-family: 'Times New Roman', Times, serif;
     background-color: rgb(233, 237, 201);
     color: black;
     font-size: 25px;
@@ -132,6 +166,13 @@ label {
     background: rgb(245, 239, 239, 0.3);
     width: 40%;
     padding: 20px;
+  }
+  .postFurnitureForm {
+    margin-left: 25vw;
+    margin-right: 25vw;
+  }
+  .room-image {
+    width: 250px;
   }
 }
 
@@ -180,3 +221,4 @@ label {
     padding: 8px;
   }
 }
+
