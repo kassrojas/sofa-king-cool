@@ -1,10 +1,10 @@
-# sofa-king-cool
+# Sofa King Cool
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This javascript driven application allows users to create, read, update, and delete rooms and furniture. 
+This javascript driven application allows users to create, read, update, and delete rooms and furniture. Users must create an account to be able to add rooms and furniture to their rooms. Rooms of any kind can be added and a catalog of furniture is provided through the furniture database. If a user wishes to add a peice of furntiure that does not exist in the database, they can create their own custom furniture post. This custom item can take in the piece's name, price values, user notes, and an image of the furniture piece. User can always return to their account to find their rooms still storing their chosen furniture.
 
 ## Table of Contents
 
