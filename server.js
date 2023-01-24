@@ -42,8 +42,6 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use("/images", express.static(path.join(__dirname, "/public/images")));
-// app.use(express.static('images'));
 app.use(require('./controllers/'));
 
 
@@ -55,5 +53,3 @@ sequelize.sync({ force: false }).then(() => {
     if (!existsSync(dir)) mkdirSync(dir, 0744);
   });
 });
-
-// /css/style.css
