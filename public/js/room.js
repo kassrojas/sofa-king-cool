@@ -75,7 +75,6 @@ const deleteRoom = async (event) => {
 
 const handleSearch = async (event) => {
     const roomId = document.querySelector('.delete-btn').getAttribute('data-index-number');
-    console.log(roomId);
 
     event.preventDefault();
 
