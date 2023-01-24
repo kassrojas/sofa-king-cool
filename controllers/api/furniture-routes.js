@@ -36,11 +36,22 @@ router.post('/', async (req, res) => {
   
       req.session.save(() => {
         req.session.name = newFurniture.name;
+        req.session.type = newFurniture.type;
         res.json(newFurniture);
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+router.put('/:id', async (req, res) => {
+  try {
+  const newImage = await Furniture.update({
+    url: result.secure_url
+  });
+  } catch {
+    res.status(500).json(err);
+  }
+})
 
   module.exports = router;
