@@ -5,7 +5,7 @@ const handleSearch = async (event) => {
   event.preventDefault();
   
   const q = document.querySelector('.form-select').value;
-  document.querySelector('.h2').innerHTML = q;
+  document.querySelector('.furnType').innerHTML = q;
   
   if (q) {
       const response = await fetch(`/api/furniture/${q}`)
@@ -19,11 +19,7 @@ const addFurniture = async (event) => {
   const lowercaseName = roomName.toLowerCase();
   const dashedName = lowercaseName.replace(' ', '-');
 
-  console.log(roomName);
   const roomId = document.querySelector(`.${dashedName}`).getAttribute('data-index-number');
-  
-  console.log(furnitureId);
-  console.log(roomId);
 
   if (roomId) {
     const response = await fetch('/api/room-furniture', {
@@ -35,11 +31,12 @@ const addFurniture = async (event) => {
         headers: { 'Content-Type': 'application/json' },
     }
     )};
-    // MESSAGE IN MODAL - SUCCESSFULLY ADDED FUNRITURE /////////////
 }
+
 
 document.querySelector('#furniture-container').addEventListener('click', (event) => {
   if (event.target.matches('.add-btn')) {
+    event.target.innerHTML = "&#10003";
     addFurniture(event);
   }
 })

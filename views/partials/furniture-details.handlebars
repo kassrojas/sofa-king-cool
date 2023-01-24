@@ -1,30 +1,9 @@
 <div class="row card bg-light m-3 p-3">
     <div class="m-1">
-        <h3 class="col-10">{{name}}</h3>
-        <h4 class="col-6">{{price}}</h4>
-        <div class="col-6">
-            <button type="button" data-index-number="{{id}}" class="add-btn btn btn-success">&#10133;</button>
+        <h3>{{name}} </br> ${{price}}</h3>
+        <div class="addFurnitureToRoomBtn">
+            <button type="button" data-index-number="{{id}}" class="add-btn btn btn-success" id="plusBtnFurniture">&#10133;</button>
+            <p>Success!</p>
         </div>
     </div>
 </div>
-{{!-- <div class="row">
-    <div class="col-6">
-        <div class="row d-flex justify-content-start m-1">
-            <button class="renameRoomBtn col-6 btn btn-outline-info">Rename Room</button>
-            <form class="input-group" id="renameRoomForm">
-                <input type="text" class="user-input form-control" id="roomRenameInput" placeholder="Rename Room">
-                <button class="rename-btn btn btn-outline-info" data-index-number="{{id}}" type="submit"
-                    id="submitRename">Rename</button>
-            </form>
-        </div>
-        <ul>
-            <li>Chair</li>
-        </ul>
-
-    </div>
-    <div class="col-6">
-        <form class="form-inline">
-        </form>
-    </div>
-</div>
-</div> --}}
