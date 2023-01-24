@@ -52,7 +52,7 @@ const deleteRoom = async (event) => {
 const deleteFurniture = async (event) => {
   event.preventDefault();
 
-  const furnitureId = event.target.previousElementSibling.getAttribute('data-index-id')
+  const furnitureId = event.target.getAttribute('data-index-id');
   
   if (furnitureId) {
     const response = await fetch(`/api/room-furniture/${furnitureId}`, {
