@@ -11,15 +11,15 @@
     <div>
         <div>
             <h4 class="text-center"> In Your Room: </h4>
-            <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <ul class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
                 {{#each rooms.furniture as |furniture|}}
                 {{>room-furniture-details}}
                 {{/each}}
             </ul>
         </div>
+    </div>
+    <div class="row">
         <button type="button" data-index-number="{{rooms.id}}" class="delete-btn btn btn-outline-danger"> Delete Room &#128465;</button>
-
-        </div>
     </div>
 </div>
 {{results}}

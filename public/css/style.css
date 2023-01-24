@@ -13,9 +13,6 @@ header {
   color: rgb(233, 237, 201);
 }
 
-.modal {
-  display: none;
-}
 
 #homeNavBar a {
   font-size: 24px;
