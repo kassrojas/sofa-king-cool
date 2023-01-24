@@ -14,4 +14,19 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const roomData = await Furniture.destroy({ where: { id: req.params.id } });
+
+    if (!roomData){
+      return res.status(404).json({ "message" : "Cannot update room-id does not exist! " });
+    }
+    res.status(200).json(roomData);
+
+  } catch (err) {
+    console.error(err);
+    res.json(err);
+  }
+})
+
 module.exports = router;
