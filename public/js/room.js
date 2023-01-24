@@ -1,5 +1,4 @@
 const showHide = function (element) {
-    console.log(element.nextElementSibling);
     if (element.nextElementSibling.style.display = "none") {
         element.nextElementSibling.style.display = "flex";
         element.style.display = "none";
@@ -12,9 +11,6 @@ const submitRoom = async (event) => {
     const roomName = document.querySelector('#roomNameInput').value.trim();
     const lowercaseName = roomName.toLowerCase();
     const dashedName = lowercaseName.replace(' ', '-');
-
-    // console.log(dashedName);
-
 
     if (roomName) {
         const response = await fetch('/api/rooms', {
@@ -37,7 +33,6 @@ const submitRoom = async (event) => {
 
 const updateRoom = async (event) => {
     event.preventDefault();
-    console.log('hello')
 
     const roomName = event.target.previousElementSibling.value.trim();
     const lowercaseName = roomName.toLowerCase();
@@ -64,7 +59,6 @@ const deleteRoom = async (event) => {
     event.preventDefault();
 
     const roomId = event.target.getAttribute('data-index-number');
-    console.log(roomId);
 
     if (roomId) {
         const response = await fetch(`/api/rooms/${roomId}`, {

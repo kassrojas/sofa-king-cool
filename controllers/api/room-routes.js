@@ -12,7 +12,6 @@ router.get('/:id', async (req, res) => {
 
 
   const rooms = roomData.get({ plain: true })
-    console.log(rooms);
     res.render('room', {
       rooms,
       loggedIn: req.session.loggedIn,
@@ -24,7 +23,6 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
     try {
       const newRoom = await Room.create({
         name: req.body.name,
