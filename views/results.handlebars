@@ -1,32 +1,36 @@
-<div class="p-3 row justify-content-between">
-    <div class="col-lg-6 m-2">
-        <h4> 1. Select Type of Furniture To Search:</h4>
-        <select class="form-select" size="3" aria-label="size 3 select example">
-            <option value="tables">Tables</option>
-            <option value="seating">Seating</option>
-            <option value="sleeping">Sleeping</option>
-            <option value="storage">Storage</option>
-            <option value="rugs">Rugs</option>
-            <option value="desks">Desks</option>
-        </select>
-        <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-    </div>
-    <div class="col-lg-6 m-2">
-        <h4>2. Select Room To Add Furniture:</h4>
-    <select class="room-choice form-select">
-        <option>Open Menu For Rooms</option>
-        {{#each rooms as |room|}}
-        {{>room-list}}
-        {{/each}}
-    </select>
+<div class="container">
+    <div class="p-3 row justify-content-between">
+        <div class="col-lg-5 col-sm-12 my-2">
+            <h4> 1. Select Type of Furniture To Search:</h4>
+            <select class="form-select" size="3" aria-label="size 3 select example">
+                <option value="tables">Tables</option>
+                <option value="seating">Seating</option>
+                <option value="sleeping">Sleeping</option>
+                <option value="storage">Storage</option>
+                <option value="rugs">Rugs</option>
+                <option value="desks">Desks</option>
+            </select>
+            <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+        </div>
+        <div class="col-lg-5 col-sm-12 my-2">
+            <h4>2. Select Room To Add Furniture:</h4>
+            <select class="room-choice form-select">
+                <option>Open Menu For Rooms</option>
+                {{#each rooms as |room|}}
+                {{>room-list}}
+                {{/each}}
+            </select>
+        </div>
     </div>
 </div>
-
-<h2 class="h2">{{furnitures.[0].type}}</h2>
-<div class="container" id="furniture-container">
-    {{#each furnitures as |furniture|}}
-    {{>furniture-details}}
-    {{/each}}
-</div>
+    <div class="container">
+        <h4>3. Add Furniture To Your Room</h4>
+        <h5 class="furnType">Selected Furniture Type: </br>{{furnitures.[0].type}}</h5>
+        <div class="container" id="furniture-container">
+            {{#each furnitures as |furniture|}}
+            {{>furniture-details}}
+            {{/each}}
+        </div>
+    </div>
 
 <script src="/js/results.js"></script>
