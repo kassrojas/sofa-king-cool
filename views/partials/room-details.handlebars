@@ -1,27 +1,21 @@
-<div class="card container bg-light m-3 p-3">
-    <div class="row m-1">
-        <a href="/api/rooms/{{id}}">
+<div class="card bg-light m-3 p-3">
+    <div class="m-1">
+        <a class="text-dark" href="/api/rooms/{{id}}">
             <h3 class="col card-header">{{name}}</h3>
         </a>
     </div>
-    <div class="row d-flex justify-content-start m-1">
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div>
-            <button class="renameRoomBtn col-6 btn btn-outline-dark">Rename Room &#9998;</button>
-            <form class="input-group" id="renameRoomForm">
-                <input type="text" class="user-input form-control" id="roomRenameInput" placeholder="Rename Room">
-                <button class="rename-btn btn btn-outline-dark" data-index-number="{{id}}" type="submit"
-                    id="submitRename">Rename</button>
-            </form>
-            </div>
-            <button type="button" data-index-number="{{id}}" class="delete-btn col-6 btn btn-outline-danger">Delete Room &#128465;</button>
-        </div>
-        <div class="col-lg-8 col-md-6 col-sm-12">
-            <ul>
-                {{#each furniture as |furniture|}}
-                {{>homepage-room-furniture}}
-                {{/each}}
-            </ul>
-        </div>
+    <div class="row m-1">
+        <button type="button" class="renameRoomBtn btn btn-outline-dark mb-2">Rename Room &#9998;</button>
+        <form class="input-group" id="renameRoomForm">
+            <input type="text" class="user-input form-control" id="roomRenameInput" placeholder="Rename Room">
+            <button class="rename-btn btn btn-outline-dark" data-index-number="{{id}}" type="submit"
+                id="submitRename">Rename</button>
+        </form>
+        <ul>
+            {{#each furniture as |furniture|}}
+            {{>homepage-room-furniture}}
+            {{/each}}
+        </ul>
+        <button type="button" data-index-number="{{id}}" class="delete-btn btn btn-outline-danger">Delete Room &#128465;</button>
     </div>
 </div>

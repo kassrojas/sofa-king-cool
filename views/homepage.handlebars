@@ -24,8 +24,8 @@
 
 <h2 class="p-3 text-center">Home</h2>
 
-<div class="row justify-space-between m-3" id="furnitureResultsPage">
-    <div class="col">
+<div class="row justify-content-center m-3" id="furnitureResultsPage">
+    <div class="col-4">
         <h4> Select Type of Furniture To Search:</h4>
         <select class="form-select" size="3" aria-label="size 3 select example">
             <option value="tables">Tables</option>
@@ -38,19 +38,21 @@
         <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
     </div>
 
-    <div class="col d-flex justify-content-end m-3">
+    <div class="col-4 d-flex align-items-center justify-content-center">
         <button id="addRoomBtn" class="btn btn-outline-dark">Add a Room</button>
         <form class="input-group" id="addRoomForm">
             <input type="text" class="col-6 user-input form-control" id="roomNameInput" placeholder="Name Your Room">
             <button class="search-btn btn btn-outline-dark" type="submit" id="submitRoom">Add</button>
         </form>
     </div>
-
 </div>
+
 <div class="container" id="room-container">
+    <div class="row row-cols-3 justify-content-center">
     {{#each rooms as |room|}}
     {{>room-details}}
     {{/each}}
+    </div>
 </div>
 
 {{else}}
