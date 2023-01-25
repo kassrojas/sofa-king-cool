@@ -103,7 +103,6 @@ document.querySelector('#room-container').addEventListener('click', (event) => {
         updateRoom(event);
     }
     else if (event.target.matches('.delete-btn')) {
-        document.querySelector('.fail-button').click();
         deleteRoom(event);
     }
     else if (event.target.matches('.renameRoomBtn')) {
