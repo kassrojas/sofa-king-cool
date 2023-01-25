@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
       loggedIn: req.session.loggedIn,
-      rooms,
       username: req.session.username,
+      rooms
     });
 
   } catch (err) {

@@ -14,7 +14,7 @@ header {
   color: rgb(233, 237, 201);
 }
 
-.background-image {
+main {
   background-image: url('/images/bench-accounting-nvzvOPQW0gc-unsplash.jpg');
   background-position: center;
   background-repeat: none;
@@ -54,19 +54,38 @@ label {
   color: black;
 }
 
+#window-signup,
+#window-login,
 .card-header {
   text-align: center;
 }
 
-#window-signup, #window-login {
-  text-align: center;
+#roomCardCss {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 4px 4px 8px 2px rgba(40, 54, 24, 0.5);
+  color: rgb(52, 78, 65);
 }
 
-#addRoomForm {
+#roomCardCss a:link {
+  text-decoration: none;
+}
+
+#roomNameCss:hover {
+  background-color: rgba(40, 54, 24, 0.5);
+  transition: 0.4s;
+  border: none;
+}
+
+.btn:hover {
+  transition:0.4s;
+}
+
+#addRoomForm,
+#renameRoomForm {
   display: none;
 }
 
-#renameRoomForm {
+.addFurnitureToRoomBtn p {
   display: none;
 }
 
@@ -93,10 +112,6 @@ label {
   font-size: smaller;
 }
 
-
-.addFurnitureToRoomBtn p {
-  display: none;
-}
 /* homepage */
 .container {
   position: relative;
@@ -129,7 +144,9 @@ label {
 
 /* window-signup and window-login's username and passw input fields start to exceed card container around  815px, 885px keeps input fields 'centered' */
 @media screen and (min-width: 885px) {
-  #window-signup, #window-login {
+
+  #window-signup,
+  #window-login {
     height: auto;
     position: absolute;
     top: 50%;
@@ -140,20 +157,25 @@ label {
     width: 40%;
     padding: 20px;
   }
+
   .postFurnitureForm {
     margin-left: 25vw;
     margin-right: 25vw;
   }
+
   .room-image {
     width: 250px;
   }
 }
 
 @media screen and (max-width: 1140px) {
-  #window-signup, #window-login {
+
+  #window-signup,
+  #window-login {
     background: rgb(228, 217, 217);
     background: rgb(245, 239, 239, 0.3);
   }
+
   header {
     padding: 1rem;
   }
@@ -178,20 +200,23 @@ label {
     background: rgb(228, 217, 217);
     background: rgb(245, 239, 239, 0.3);
   }
+
   #gettingStartedContainer h3 {
     font-weight: bold;
     font-size: 24px;
   }
+
   #gettingStartedContainer h4 {
     font-weight: bold;
     font-size: 20px;
   }
+
   #homeNavBar a {
     font-size: 20px;
     padding: 2px;
   }
+
   header {
     padding: 8px;
   }
 }
-
