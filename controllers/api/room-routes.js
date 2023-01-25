@@ -27,9 +27,9 @@ router.post('/', async (req, res) => {
 
       const userRooms = await Room.findAll({ where: { user_id: req.session.userId } })
       const plainRooms = userRooms.map((rooms) => rooms.get({ plain: true }));
-      const roomArray = plainRooms.map((room) => {return room.name})
+      const roomArray = plainRooms.map((room) => {return room.dashed_name})
       
-      if (roomArray.includes(req.body.name)){
+      if (roomArray.includes(req.body.dashed_name)){
         res.status(409).end();
         return;
       };
