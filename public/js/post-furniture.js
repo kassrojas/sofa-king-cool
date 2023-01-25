@@ -1,3 +1,5 @@
+const serverModalButton = document.querySelector('.fail-button');
+
 const handleSubmit = async (event) => {
   event.preventDefault();
 
@@ -17,6 +19,10 @@ const handleSubmit = async (event) => {
       }),
       headers: { 'Content-Type': 'application/json' },
     })
+    if (response.status === 500 ) {
+      serverModalButton.click();
+      return;
+  } 
     const { id } = await response.json();
     document.location.replace(`/post-image/${id}`);
   }

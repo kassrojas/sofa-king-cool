@@ -1,98 +1,97 @@
-{{!-- Modal - Are you sure you want to delete? --}}
-{{!-- <button type="button" class="d-none btn btn-primary fail-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+{{>delete-modal}}
 
-<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Delete</button>
-      </div>
+<button type="button" class="d-none btn btn-primary" id="add-error" data-bs-toggle="modal" data-bs-target="#errorModal">
+</button>
+<div class="modal" tabindex="-1" id="errorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Error adding room</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Please choose a unique room name!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
     </div>
-  </div>
-</div> --}}
+</div>
 
 {{#if loggedIn}}
 <div class="background-image">
-<div class="p-3 text-center"> {{>user-details}}</div>
+    <div class="p-3 text-center"> {{>user-details}}</div>
 
 
-<div class="row justify-content-center m-3" id="furnitureResultsPage">
-    <div class="col-sm-6 col-md-4">
-        <h4> Select Type of Furniture To Search:</h4>
-        <select class="form-select mb-2" size="3" aria-label="size 3 select example">
-            <option value="tables" selected>Tables</option>
-            <option value="seating">Seating</option>
-            <option value="sleeping">Sleeping</option>
-            <option value="storage">Storage</option>
-            <option value="rugs">Rugs</option>
-            <option value="desks">Desks</option>
-        </select>
-        <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-    </div>
+    <div class="row justify-content-center m-3" id="furnitureResultsPage">
+        <div class="col-sm-6 col-md-4">
+            <h4> Select Type of Furniture To Search:</h4>
+            <select class="form-select mb-2" size="3" aria-label="size 3 select example">
+                <option value="tables" selected>Tables</option>
+                <option value="seating">Seating</option>
+                <option value="sleeping">Sleeping</option>
+                <option value="storage">Storage</option>
+                <option value="rugs">Rugs</option>
+                <option value="desks">Desks</option>
+            </select>
+            <button class="search-btn btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+        </div>
 
-    <div class="col-sm-6 col-md-4 d-flex align-items-center justify-content-center">
-        <button id="addRoomBtn" class="btn btn-outline-dark">Add a Room</button>
-        <form class="input-group" id="addRoomForm">
-            <input type="text" class="col-6 user-input form-control" id="roomNameInput" placeholder="Name Your Room">
-            <button class="search-btn btn btn-outline-dark" type="submit" id="submitRoom">Add</button>
-        </form>
-    </div>
-</div>
-
-<div class="container" id="room-container">
-    <div class="row row-cols-xs-1 row-cols-sm-3 justify-content-center">
-    {{#each rooms as |room|}}
-    {{>room-details}}
-    {{/each}}
-    </div>
-</div>
-
-{{else}}
-<img class="house" src="/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg" alt="A simple room" />
-
-<div class="container" id="gettingStartedContainer">
-    <h3 class="text-center p-3">How To Get Started</h3>
-    <div class="row d-flex justify-content-center">
-        <div class="col text-center">
-            <h4>1. Create an Account</h4>
-            <p><a href="/login">Login</a> or <a href="/signup">Sign Up</a> to get started on your dashboard
-            </p>
+        <div class="col-sm-6 col-md-4 d-flex align-items-center justify-content-center">
+            <button id="addRoomBtn" class="btn btn-outline-dark">Add a Room</button>
+            <form class="input-group" id="addRoomForm">
+                <input type="text" class="col-6 user-input form-control" id="roomNameInput"
+                    placeholder="Name Your Room">
+                <button class="search-btn btn btn-outline-dark" type="submit" id="submitRoom">Add</button>
+            </form>
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
-        <div class="col text-center">
-            <h4>2. Create a Room</h4>
-            <p>Once in your dashboard, you can add as many rooms as you'd like
-            </p>
+    <div class="container" id="room-container">
+        <div class="row row-cols-xs-1 row-cols-sm-3 justify-content-center">
+            {{#each rooms as |room|}}
+            {{>room-details}}
+            {{/each}}
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
-        <div class="col text-center">
-            <h4>3. Add Furniture</h4>
-            <p>Search for a piece of furniture then select the room you want to add it to.
-            </p>
-        </div>
-    </div>
+    {{else}}
+    <img class="house" src="/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg" alt="A simple room" />
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-9 text-center">
-            <a href="/signup" class="btn btn-outline-dark m-2 p-2" id="getStartedBtn">Get Started</a>
+    <div class="container" id="gettingStartedContainer">
+        <h3 class="text-center p-3">How To Get Started</h3>
+        <div class="row d-flex justify-content-center">
+            <div class="col text-center">
+                <h4>1. Create an Account</h4>
+                <p><a href="/login">Login</a> or <a href="/signup">Sign Up</a> to get started on your dashboard
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col text-center">
+                <h4>2. Create a Room</h4>
+                <p>Once in your dashboard, you can add as many rooms as you'd like
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col text-center">
+                <h4>3. Add Furniture</h4>
+                <p>Search for a piece of furniture then select the room you want to add it to.
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-9 text-center">
+                <a href="/signup" class="btn btn-outline-dark m-2 p-2" id="getStartedBtn">Get Started</a>
+            </div>
         </div>
     </div>
-</div>
-{{/if}}
+    {{/if}}
 </div>
 <script src="/js/room.js"></script>
 <script src="/js/login.js"></script>

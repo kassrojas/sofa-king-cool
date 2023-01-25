@@ -1,3 +1,6 @@
+const serverModalButton = document.querySelector('.fail-button');
+const clientModalButton = document.querySelector('#add-error');
+
 const showHide = function (element) {
     if (element.nextElementSibling.style.display = "none") {
         element.nextElementSibling.style.display = "flex";
@@ -23,8 +26,12 @@ const submitRoom = async (event) => {
         }
         )
         if (response.status === 500) {
-            document.querySelector('.modal').style.display = 'fixed';
-        }
+            serverModalButton.click();
+            return;
+        } else if (response.status === 409) {
+            clientModalButton.click();
+            return;
+        };
     };
 
     const here = document.location;
@@ -51,26 +58,38 @@ const updateRoom = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         }
         )
+        if (response.status === 500) {
+            serverModalButton.click();
+            return;
+        }
     };
     document.location.replace('/');
 };
 
 const deleteRoom = async (event) => {
     event.preventDefault();
-
     const roomId = event.target.getAttribute('data-index-number');
+    const confirmDelete = document.querySelector('.delete-button');
+    confirmDelete.click()
 
-    if (roomId) {
-        const response = await fetch(`/api/rooms/${roomId}`, {
-            method: 'DELETE',
-            body: JSON.stringify({
-                id: roomId
-            }),
-            headers: { 'Content-Type': 'application/json' },
-        }
-        )
-    };
-    document.location.replace('/');
+    document.querySelector('.confirm-delete-room').addEventListener('click', async () => {
+
+        if(roomId) {
+            const response = await fetch(`/api/rooms/${roomId}`, {
+                method: 'DELETE',
+                body: JSON.stringify({
+                    id: roomId
+                }),
+                headers: { 'Content-Type': 'application/json' },
+            }
+            )
+            if (response.status === 500) {
+                serverModalButton.click();
+                return;
+            }
+        };
+        document.location.replace('/');
+    });
 };
 
 const handleSearch = async (event) => {

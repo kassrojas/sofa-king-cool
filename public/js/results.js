@@ -1,12 +1,14 @@
-const handleSearch = async (event) => { 
+const serverModalButton = document.querySelector('.fail-button');
+
+const handleSearch = async (event) => {
   event.preventDefault();
-  
+
   const roomId = document.querySelector('.add-btn').getAttribute('data-index-number');
   const q = document.querySelector('.form-select').value;
   document.querySelector('.furnType').innerHTML = q;
-  
+
   if (q) {
-      const response = await fetch(`/api/furniture/${q}`)
+    const response = await fetch(`/api/furniture/${q}`)
   }
   document.location.replace(`/api/furniture/${q}`);
 }
@@ -21,14 +23,19 @@ const addFurniture = async (event) => {
 
   if (roomId) {
     const response = await fetch('/api/room-furniture', {
-        method: 'POST',
-        body: JSON.stringify({ 
-          furniture_id: furnitureId,  
-          room_id: roomId
-        }),
-        headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      body: JSON.stringify({
+        furniture_id: furnitureId,
+        room_id: roomId
+      }),
+      headers: { 'Content-Type': 'application/json' },
     }
-    )};
+    )
+    if (response.status === 500) {
+      serverModalButton.click();
+      return;
+    }
+  };
 }
 
 

@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
       const roomArray = plainRooms.map((room) => {return room.name})
       
       if (roomArray.includes(req.body.name)){
-        res.status(409);
+        res.status(409).end();
         return;
       };
 
