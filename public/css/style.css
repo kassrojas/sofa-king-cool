@@ -14,7 +14,7 @@ header {
   color: rgb(233, 237, 201);
 }
 
-main {
+.background-image {
   background-image: url('/images/bench-accounting-nvzvOPQW0gc-unsplash.jpg');
   background-position: center;
   background-repeat: none;
@@ -58,7 +58,7 @@ label {
   text-align: center;
 }
 
-#window-signup {
+#window-signup, #window-login {
   text-align: center;
 }
 
@@ -116,7 +116,7 @@ label {
   height: auto;
 }
 
-/* ______________________________login and signup pages_______________________________ */
+/* __login and signup pages___ */
 .hero-image {
   background-image: url("/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg");
   background-color: #cccccc;
@@ -127,36 +127,9 @@ label {
   position: cover;
 }
 
-@media screen and (min-width: 1245px) {
-  #window-login {
-    height: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgb(228, 217, 217);
-    background: rgb(245, 239, 239, 0.3);
-    width: 20%;
-    height: 30%;
-    padding: 20px;
-  }
-}
-
-@media screen and (max-width: 1245px) {
-  #window-login {
-    background: rgb(228, 217, 217);
-    background: rgb(245, 239, 239, 0.3);
-  }
-
-  body {
-    background-color: rgb(233, 237, 201);
-    color: black;
-    font-size: 25px;
-  }
-}
-
-@media screen and (min-width: 1140px) {
-  #window-signup {
+/* window-signup and window-login's username and passw input fields start to exceed card container around  815px, 885px keeps input fields 'centered' */
+@media screen and (min-width: 885px) {
+  #window-signup, #window-login {
     height: auto;
     position: absolute;
     top: 50%;
@@ -177,7 +150,7 @@ label {
 }
 
 @media screen and (max-width: 1140px) {
-  #window-signup {
+  #window-signup, #window-login {
     background: rgb(228, 217, 217);
     background: rgb(245, 239, 239, 0.3);
   }
