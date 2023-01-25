@@ -24,6 +24,16 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
+
+      const userRooms = await Room.findAll({ where: { user_id: req.session.userId } })
+      const plainRooms = userRooms.map((rooms) => rooms.get({ plain: true }));
+      const roomArray = plainRooms.map((room) => {return room.name})
+      
+      if (roomArray.includes(req.body.name)){
+        res.status(409);
+        return;
+      };
+
       const newRoom = await Room.create({
         name: req.body.name,
         dashed_name: req.body.dashed_name,

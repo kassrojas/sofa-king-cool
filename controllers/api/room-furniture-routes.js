@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
       furniture_id: req.body.furniture_id,
       room_id: req.body.room_id
     });
-
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
