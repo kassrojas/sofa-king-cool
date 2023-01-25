@@ -1,5 +1,3 @@
-// Access furniture api while on a rooms page ????
-
 const showHide = function (element) {
   if (element.nextElementSibling.style.display = "none") {
       element.nextElementSibling.style.display = "flex";

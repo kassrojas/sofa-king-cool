@@ -1,27 +1,36 @@
 const router = require('express').Router();
 const { Room, Furniture } = require('../models/');
 
-// get all posts for homepage
 router.get('/', async (req, res) => {
-  const roomData = await Room.findAll({
-    include: {
-      model: Furniture
-    }
-  });
-  const rooms = roomData.map((room) =>
-    room.get({ plain: true })
-  );  
-  
-  try {
-    res.render('homepage', {
-      loggedIn: req.session.loggedIn,
-      username: req.session.username,
-      rooms
+  if (req.session.loggedIn) {
+    const roomData = await Room.findAll({
+      where: { user_id: req.session.userId },
+      include: {
+        model: Furniture
+      }
     });
+    const rooms = roomData.map((room) =>
+      room.get({ plain: true })
+    );
+
+    try {
+      res.render('homepage', {
+        loggedIn: req.session.loggedIn,
+        username: req.session.username,
+        rooms
+      });
+
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else{
+  try {
+    res.render('homepage');
 
   } catch (err) {
     res.status(500).json(err);
   }
+}
 });
 
 router.get('/login', (req, res) => {

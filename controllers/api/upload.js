@@ -27,11 +27,5 @@ router.post('/:id', upload, async (req, res) => {
   return res.statusCode(404);
 });
 
-// router.get('/', async (req, res) => {
-//   const galleryData = await Gallery.findAll();
-//   const photos = galleryData.map(item => item.get({ plain: true }));
-//   // res.render('home', { photos });
-// });
-
 module.exports = router;
 
